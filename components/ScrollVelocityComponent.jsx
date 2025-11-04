@@ -7,8 +7,8 @@ const ScrollVelocityComponent = () => {
     <div className="w-full py-2 mt-2 overflow-hidden bg-[#2c608e]">
       <ScrollVelocity
         texts={[
-          "🩺 Biggest Hospital in Nagpur",
-          "⚕️ Only Complete Diagnostic Center in SOUTH NAGPUR",
+          "🩺 Biggest Hospital in Nagpur...",
+          "⚕️ Only Complete Diagnostic Center in SOUTH NAGPUR...",
         ]}
         className="custom-scroll-text text-2xl"
         velocity={20}

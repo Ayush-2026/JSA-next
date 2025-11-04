@@ -5,6 +5,7 @@ import Navbar from "../../components/Navbar";
 import HeaderSlider from "../../components/HeaderSlider";
 import TypeWriterEffect from "../../components/TypeWriterEffect";
 import ScrollVelocityComponent from '../../components/ScrollVelocityComponent'
+import MedicalAssistance from "../../components/MedicalAssistance";
 
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
       <ScrollVelocityComponent />
       <Navbar />
       <HeaderSlider />
+      <MedicalAssistance/>
     </>
   );
 }
