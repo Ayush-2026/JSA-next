@@ -1,0 +1,12 @@
+{
+  "navbar": {
+    "about": "About Us",
+    "doctors": "Find a Doctor",
+    "departments": "Departments",
+    "book-test":"book a test",
+    "contact-us":"Contact Us"
+  },"home": {
+    "title": "Welcome to Our Hospital"
+  }
+  
+}
