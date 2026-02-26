@@ -48,8 +48,6 @@ export default async function DoctorDetailPage({ params }) {
               </span>
             </div>
 
-            
-
             {/* Bio (3 paragraphs rendered with line breaks) */}
             <div className="mt-6 text-gray-700 leading-relaxed text-sm sm:text-base whitespace-pre-line">
               {bio}
@@ -68,12 +66,22 @@ export default async function DoctorDetailPage({ params }) {
             </p>
           </div>
 
-          <Link
+          {
+            <Link
+              href={`/${params.lang}/consultation?doctor=${encodeURIComponent(doctor.slug)}`}
+            >
+              <button className="mt-6 rounded-xl bg-blue-600 text-white px-6 py-3 font-semibold hover:bg-blue-500 transition">
+                Book Consultation
+              </button>
+            </Link>
+
+            /* <Link
             href={`/${lang}/consultation?doctor=${doctor.slug}`}
             className="inline-flex items-center justify-center rounded-xl bg-[#255C8D] px-6 py-3 text-white font-semibold hover:opacity-95 transition"
           >
             Book Appointment
-          </Link>
+          </Link> */
+          }
         </div>
       </div>
     </main>

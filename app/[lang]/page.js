@@ -10,9 +10,14 @@ import EventsUpdatesSection from "@/components/home/EventUpdatesSection";
 
 
 export default async function Home({ params }) {
-  const dict = await getDictionary(params.lang);
+ 
+   const { lang } = await params;
+ 
+  const dict = await getDictionary(lang);
  const departments = await getDepartments({ limit: 6 });
- const {lang} = await params;
+
+
+
   return (
     <>
       <HeaderSlider />

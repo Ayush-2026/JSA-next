@@ -336,3 +336,285 @@ CREATE TABLE IF NOT EXISTS newsletter_subscribers (
   created_at TIMESTAMPTZ DEFAULT NOW()
 );
 
+footer code
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+
+export default function Footer({ lang = "en" }) {
+  return (
+    <footer className="mt-10">
+      <div className="bg-[#295D8B] text-white flex flex-col md:flex-row items-start justify-center px-6 md:px-16 lg:px-32 gap-10 py-14 border-b border-white/20">
+        {/* Brand */}
+        <div className="w-full md:w-1/3">
+          <div className="flex items-center gap-3">
+            <Link href={`/${lang}`}>
+              <Image
+                className="w-28 md:w-32"
+                src="/assets/bottom-logo.png" // put in public/assets/
+                width={140}
+                height={60}
+                alt="JSA Hospital Logo"
+                priority
+              />
+            </Link>
+          </div>
+
+          <h2 className="mt-3 text-lg font-semibold">JSA Hospital</h2>
+          <p className="mt-4 text-sm text-gray-200 leading-relaxed">
+            Providing compassionate healthcare with cutting-edge medical
+            technology and experienced professionals dedicated to your
+            wellbeing.
+          </p>
+        </div>
+
+        {/* Quick Links */}
+        <div className="w-full md:w-1/5">
+          <h2 className="font-medium text-white mb-5">Quick Links</h2>
+          <ul className="text-sm text-gray-200 space-y-2">
+            <li>
+              <Link className="hover:underline transition" href={`/${lang}`}>
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="hover:underline transition"
+                href={`/${lang}/about-us`}
+              >
+                About us
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="hover:underline transition"
+                href={`/${lang}/doctors`}
+              >
+                Find a Doctor
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="hover:underline transition"
+                href={`/${lang}/departments`}
+              >
+                Departments
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="hover:underline transition"
+                href={`/${lang}/book-tests`}
+              >
+                Book Tests
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        {/* Patient Services */}
+        <div className="w-full md:w-1/5">
+          <h2 className="font-medium text-white mb-5">Patient Services</h2>
+          <ul className="text-sm text-gray-200 space-y-2">
+            <li>
+              <Link
+                className="hover:underline transition"
+                href={`/${lang}/consultation`}
+              >
+                Book Appointment
+              </Link>
+            </li>
+            <li>
+              <span className="opacity-80">Lab Reports</span>
+            </li>
+            <li>
+              <span className="opacity-80">Patient Feedback</span>
+            </li>
+          </ul>
+        </div>
+
+        {/* Contact */}
+        <div className="w-full md:w-1/4">
+          <h2 className="font-medium text-white mb-5">Contact Information</h2>
+          <div className="text-gray-200 text-sm space-y-2">
+            <a className="hover:underline" href="tel:+919999999999">
+              +91 9999999999
+            </a>
+            <p>email@gmail.com</p>
+            <p>
+              Address: 123 Medical Center Drive Healthcare District Mumbai,
+              Maharashtra 400001
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <p className="bg-[#295D8B] text-white py-4 text-center text-xs md:text-sm">
+        Copyright 2025 © Balaji LifeCare All Right Reserved.
+      </p>
+    </footer>
+  );
+}
+
+
+
+
+consultation/page.js 
+
+import React from 'react'
+
+const page = () => {
+  return (
+    <>
+      <div className="mb-4"></div>
+      <div className="text-center gap-9 flex-wrap  sm:flex justify-center bg-gray-200 py-10 ">
+        <div className="w-full text-2xl flex justify-center">
+          <h1 className="font-medium text-blue-400">Book Appointment</h1>
+        </div>
+
+        <div className="">
+          <div>
+            <form>
+              <input
+                required
+                type="text"
+                placeholder="Patient Name"
+                className="px-3 w-80 md:w-130 h-8 my-2 bg-white border-black border-1"
+              />
+            </form>
+          </div>
+          <div>
+            <form action="">
+              <input
+                required
+                type="email"
+                placeholder="Email"
+                className="px-3 w-80 md:w-130 h-8 my-2 bg-white border-black border-1"
+              />
+            </form>
+          </div>
+          <div>
+            <form action="">
+              <input
+                required
+                type="text"
+                placeholder="City"
+                className="px-3 w-80 md:w-130 h-8 my-2 bg-white border-black border-1"
+              />
+            </form>
+          </div>
+          <div>
+            <form action="">
+              <input
+                required
+                type="date"
+                placeholder="Date of birth"
+                className="px-3 w-80 md:w-130 h-8 my-2 bg-white text-gray-500 border-black border-1"
+              />
+            </form>
+          </div>
+        </div>
+
+        <div>
+          <div>
+            <form>
+              <input
+                required
+                type="number"
+                placeholder="Patient Phone"
+                className="px-3 w-80 md:w-130 h-8 my-2 bg-white border-black border-1"
+              />
+            </form>
+          </div>
+          <div className="items-center">
+            <select className="px-3 w-80 md:w-130 h-8 my-2 text-gray-500 bg-white border-black border-1">
+              <option>Select Speciality</option>
+              <option>Urology</option>
+              <option>Nephrology</option>
+              <option>Cardiology</option>
+              <option>Gynaecology</option>
+              <option>Orthopaedic</option>
+              <option>Oncology</option>
+            </select>
+          </div>
+
+          <div className=" items-center">
+            <select className="px-3 w-80 md:w-130 h-8 my-2 text-gray-500 bg-white border-black border-1">
+              <option>Doctor</option>
+              <option>Dr. 1</option>
+              <option>Dr. 2</option>
+              <option>Dr. 3</option>
+              <option>Dr. 4</option>
+              <option>Dr. 5</option>
+            </select>
+          </div>
+
+          <div className=" items-center">
+            <form action="">
+              
+              <input
+                required
+                type="date"
+                placeholder="Date of birth"
+                className="px-3 w-80 md:w-130 h-8 my-2 bg-white text-gray-500 border-black border-1"
+              />
+            </form>
+          </div>
+        </div>
+        <div className="flex flex-col items-center gap-4">
+          {/* <form action="">
+            <textarea
+              required
+              type='text'
+              placeholder="What problem are you facing"
+              className="px-3 h-20 w-80 md:mt-0 sm:mt-3 mt-3 sm:w-169  md:w-269 bg-white text-gray-500 border-black border-1"
+            />
+          </form> */}
+        </div>
+        <div className="w-full flex justify-center">
+          <button className="px-6 mt-3 sm:mt-0 py-2 bg-blue-600 hover:bg-blue-400 hover:scale-105 text-white">
+            Submit
+          </button>
+        </div>
+      </div>
+    </>
+  );
+}
+
+export default page
+
+
+
+
+
+
+CREATE TABLE IF NOT EXISTS doctor_timings (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  doctor_id UUID NOT NULL REFERENCES doctors(id) ON DELETE CASCADE,
+  day_of_week INT NOT NULL CHECK (day_of_week BETWEEN 0 AND 6),
+  start_time TIME NOT NULL,
+  end_time TIME NOT NULL,
+  slot_duration_min INT NOT NULL DEFAULT 30,
+  is_active BOOLEAN DEFAULT TRUE,
+  UNIQUE (doctor_id, day_of_week)
+);
+
+
+
+
+CREATE TABLE IF NOT EXISTS appointments (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  doctor_id UUID NOT NULL REFERENCES doctors(id) ON DELETE CASCADE,
+  schedule_time TIMESTAMPTZ NOT NULL,
+  slot_duration_min INT NOT NULL DEFAULT 30,
+  status VARCHAR(20) NOT NULL DEFAULT 'confirmed',
+  patient_name VARCHAR(255) NOT NULL,
+  patient_phone VARCHAR(20) NOT NULL,
+  health_issue TEXT,
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- prevent same doctor + same slot booked twice (simple fixed-slot system)
+CREATE UNIQUE INDEX IF NOT EXISTS uniq_doctor_slot_active
+ON appointments(doctor_id, schedule_time)
+WHERE status IN ('confirmed','hold');

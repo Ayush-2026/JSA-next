@@ -23,7 +23,7 @@ const Heading = ({ lang = "en" }) => {
           JSA Hospital
         </h1>
         <p className="text-[10px] sm:text-xs md:text-base mt-1 text-gray-500 italic">
-          Excellence in Healthcare...
+          Unit of Balaji HealthCare
         </p>
       </div>
 
