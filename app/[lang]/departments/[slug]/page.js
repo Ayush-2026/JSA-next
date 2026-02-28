@@ -10,10 +10,8 @@ function pickLang(lang, obj, keyBase) {
   return obj[`${keyBase}_en`] || "";
 }
 
-
-
 export default async function DepartmentDetail({ params }) {
-  const { lang, slug } = params;
+  const { lang, slug } = await params;
 
   const dept = await getDepartmentBySlug(slug);
   if (!dept) return notFound();
@@ -73,25 +71,42 @@ export default async function DepartmentDetail({ params }) {
             const spec = pickLang(lang, doc, "specialization");
 
             return (
-              <div
+              <Link
                 key={doc.id}
-                className="bg-white rounded-xl border shadow-sm p-4 hover:shadow-md transition"
+                href={`/${lang}/doctors/${doc.slug}`}
+                className="block"
               >
-                <div className="font-semibold text-lg">{doctorName}</div>
-                {spec && (
-                  <div className="text-sm text-gray-600 mt-1">{spec}</div>
-                )}
+                <div
+                  className="
+                    bg-white rounded-xl border shadow-sm p-4
+                    hover:shadow-md hover:-translate-y-0.5
+                    transition
+                    focus:outline-none focus:ring-4 focus:ring-blue-100
+                  "
+                >
+                  <div className="font-semibold text-lg text-[#265957]">
+                    {doctorName}
+                  </div>
 
-                {/* Optional image if you have it */}
-                {doc.image_url ? (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img
-                    src={doc.image_url}
-                    alt={doctorName}
-                    className="mt-3 w-full h-40 object-cover rounded-lg"
-                  />
-                ) : null}
-              </div>
+                  {spec && (
+                    <div className="text-sm text-gray-600 mt-1">{spec}</div>
+                  )}
+
+                  {/* Optional image if you have it */}
+                  {doc.image_url ? (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img
+                      src={doc.image_url}
+                      alt={doctorName}
+                      className="mt-3 w-full h-40 object-cover rounded-lg"
+                    />
+                  ) : null}
+
+                  <div className="mt-3 text-sm font-semibold text-blue-700">
+                    View Profile →
+                  </div>
+                </div>
+              </Link>
             );
           })}
         </div>

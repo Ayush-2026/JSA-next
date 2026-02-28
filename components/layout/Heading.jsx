@@ -22,8 +22,8 @@ const Heading = ({ lang = "en" }) => {
         <h1 className="mt-3 text-3xl sm:text-5xl md:text-7xl font-semibold text-gray-900">
           JSA Hospital
         </h1>
-        <p className="text-[10px] sm:text-xs md:text-base mt-1 text-gray-500 italic">
-          Unit of Balaji HealthCare
+        <p className="text-[10px] font-bold sm:text-xs md:text-[35px] mt-1 text-black italic">
+          (Unit of Balaji LifeCare India Limited)
         </p>
       </div>
 
